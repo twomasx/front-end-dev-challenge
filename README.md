@@ -33,8 +33,16 @@ ChallengeDataService:
 - You will not need to modify the ChallengeDataService code.
 - Feel free to use any approach, framework, or tools you need to meet the acceptance criteria.
 
-TODO:
+### Bonus Challenge
 
-- style guidelines?
-- layout requrements?
-- streaming challenge?
+The ChallengeDataService also provides a simple streaming API:
+
+```
+ChallengeDataService:
+  startStreaming(rate, callback)
+  stopStreaming()
+```
+Where `callback` is of the form `function(x,y)` where `x` and `y` are numbers.
+`callback` will be called every `rate` samples per second.
+
+The goal here is to ensure that your application can handle dynamically generated data.
