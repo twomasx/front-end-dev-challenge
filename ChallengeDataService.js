@@ -41,6 +41,10 @@ const delay = async (ms) => {
 
 export class ChallengeDataService {
 
+  constructor() {
+    this._streamTimeout = 0;
+  }
+
   /*
    Fetch a dataset.
    This function is intended to simulate an asynchronous operation and provide
@@ -78,5 +82,43 @@ export class ChallengeDataService {
     await delay(Math.random() * 500);
 
     return new ChallengeDataSet(`DataSet-${which}`, xColumn, yColumn);
+  }
+
+  /* Streaming API
+   *
+   * Start streaming x,y pairs
+   *
+   * @param {number} samples per second
+   * @param {function} callback function(x,y) where x,y are numbers
+   *
+   */
+  startStreaming(rate, callback) {
+
+    const delayMS = 1000 / rate;
+    const deltaX = 2*Math.PI / 100;
+    let x = 0;
+
+    const getNextSample = () => {
+      const y = Math.sin(x);
+
+      callback(x,y);
+      x += deltaX;
+
+      this._streamTimeout = setTimeout(getNextSample, delayMS);
+    };
+
+    this.stopStreaming();
+
+    this._streamTimeout = setTimeout(getNextSample, 1000);
+  }
+
+  /*
+   * Stop streaming
+   */
+  stopStreaming() {
+    if (this._streamTimeout) {
+      clearTimeout(this._streamTimeout);
+      this._streamTimeout = 0;
+    }
   }
 }
