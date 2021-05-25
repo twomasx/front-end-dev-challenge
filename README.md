@@ -30,8 +30,13 @@ ChallengeDataService:
   - The data table must have a header displaying the column name
 - We have provided a charting component for you to use for this example. You'll only need to import this into your application and provide data to be graphed.
   - You won't need to modify this code. Documentation for this component can be found in `./challenge-chart/README.md`.
-- You will not need to modify the ChallengeDataService code.
+- You will not need to modify the ChallengeDataService code, but can augment it if necessary.
 - Feel free to use any approach, framework, or tools you need to meet the acceptance criteria.
+
+While these are the conditions of acceptance, if they're not all met, we can still go through your solution together.
+That won't automatically disqualify you.  We don't expect you to spend hours on this.
+
+However, that being said, if you do get these wrapped up quickly, feel free to add any new and interesting features you can think of that might make this application better.
 
 ### Bonus Challenge
 
