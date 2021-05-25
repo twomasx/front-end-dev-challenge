@@ -19,7 +19,7 @@ ChallengeDataSet:
   yColumn: ChallengeDataColumn
 
 ChallengeDataService:
-  getDataSet(): Promise<ChallengeDataSet>
+  getDataSet(which): Promise<ChallengeDataSet>
 ```
 
 # Conditions of acceptance:
