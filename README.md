@@ -22,23 +22,39 @@ ChallengeDataService:
   getDataSet(which): Promise<ChallengeDataSet>
 ```
 
-# Conditions of acceptance:
+## Conditions of acceptance:
 
 - Provide a way for the user to pull in any one of the three datasets (small, medium and large).
-- Provide UI to display the current displayed dataset.
+- Provide responsive UI (particularly mobile and desktop) to display the current displayed dataset.
 - Build a data table to display the given data sets.
   - The data table must have a header displaying the column name
+  - a skeleton lit component table (`challenge-table`) has been added as an example. You may modify it in any way or create a new table entirely.  
 - We have provided a charting component for you to use for this example. You'll only need to import this into your application and provide data to be graphed.
   - You won't need to modify this code. Documentation for this component can be found in `./challenge-chart/README.md`.
 - You will not need to modify the ChallengeDataService code, but can augment it if necessary.
-- Feel free to use any approach, framework, or tools you need to meet the acceptance criteria.
+- Feel free to use any approach, framework, or tools you need to meet the acceptance criteria.  
+
+Please keep accessibility in mind while participating in this challenge.  
 
 While these are the conditions of acceptance, if they're not all met, we can still go through your solution together.
 That won't automatically disqualify you.  We don't expect you to spend hours on this.
 
-However, that being said, if you do get these wrapped up quickly, feel free to add any new and interesting features you can think of that might make this application better.
+However, that being said, if you do get these wrapped up quickly, feel free to add any new and interesting features you can think of that might make this application better.  
 
-### Bonus Challenge
+## Setup
+Install dependencies:
+```
+npm install
+```
+
+## Dev Server
+To run the dev server and open the project in a new browser tab:
+```
+npm run serve
+```
+[http://localhost:8000/](http://localhost:8000/)
+
+## Bonus Challenge
 
 The ChallengeDataService also provides a simple streaming API:
 
